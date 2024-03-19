@@ -172,6 +172,9 @@ public class JIFVisiteAjout extends JInternalFrame implements ActionListener
 
 			// Vérification validité de la visite
 			if(err == null) {
+				String[] date = uneVisite.getDate().split("/");
+				uneVisite.setDate(date[2] + "-" + date[1] + "-" + date[0]);
+
 				// Ajout de la visite dans la base de données
 				VisiteService.ajouter(uneVisite);
 

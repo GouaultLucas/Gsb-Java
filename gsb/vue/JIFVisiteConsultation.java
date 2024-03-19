@@ -120,6 +120,12 @@ public class JIFVisiteConsultation extends JInternalFrame implements ActionListe
 
 		// On initialise les données
 		visites = VisiteService.getListeVisites();
+
+		for(Visite laVisite : visites) {
+			String[] date = laVisite.getDate().split("-");
+			laVisite.setDate(date[2] + "/" + date[1] + "/" + date[0]);
+		}
+
 		pointeur = 0;
 		if(visites.size() > 0) remplir();
 
